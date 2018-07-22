@@ -1,9 +1,14 @@
 package l.com.recycel_pro;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,10 +25,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolBar);
+        setSupportActionBar(toolbar);
         recyclerPlace = findViewById(R.id.recylerView);
         places = new ArrayList<>();
         adapter = new PlaceAdapter(places);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         RecyclerView.LayoutManager layoutManager1 = new LinearLayoutManager(this);
         recyclerPlace.setLayoutManager(layoutManager1);
@@ -38,4 +45,5 @@ public class MainActivity extends AppCompatActivity {
         }
         adapter.notifyDataSetChanged();
     }
+
 }

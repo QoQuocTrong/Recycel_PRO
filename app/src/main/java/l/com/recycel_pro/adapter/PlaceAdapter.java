@@ -13,7 +13,7 @@ import java.util.List;
 import l.com.recycel_pro.R;
 import l.com.recycel_pro.model.Place;
 
-public class PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHoder> {
+public class    PlaceAdapter extends RecyclerView.Adapter<PlaceAdapter.ViewHoder> {
     private List<Place> places;
     public PlaceAdapter(List<Place> places) {
         this.places = places;
